@@ -5,14 +5,14 @@
       style="position: fixed; height: 100vh; width: 4px; z-index: 2;"
     />
     <div
-      class="w-full flex-shrink-0 sm:pl-20 bg-gray-600
+      class="w-full flex-shrink-0 sm:pl-20 bg-green-600
         h-screen flex items-end sm:items-center justify-end sm:justify-start relative"
     >
-      <div class="text-right sm:text-left text-black text-5xl sm:text-6xl flex flex-col px-4 py-4">
-        <div>
+      <div class="text-right sm:text-left text-black text-5xl sm:text-6xl flex flex-col pl-24 pb-32">
+        <div style="transform: rotate(45deg)">
           YAMAGUCHI
         </div>
-        <div style="margin-top: -24px">
+        <div style="margin-top: 24px; transform: rotate(45deg)">
           TAKAHIRO
         </div>
       </div>
