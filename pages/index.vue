@@ -1,11 +1,19 @@
 <template>
-  <div>
+  <div
+    v-scroll="onScroll"
+    class="transition duration-700 delay-300"
+  >
+    <div
+      class="w-12 sm:w-64 transition duration-700 delay-300"
+      :class="bgClass"
+      style="position: fixed; height: 100vh; z-index: -1;"
+    />
     <div
       class="bg-black ml-12 sm:ml-64"
       style="position: fixed; height: 100vh; width: 4px; z-index: 2;"
     />
     <div
-      class="w-full flex-shrink-0 sm:pl-20 bg-green-600
+      class="w-full flex-shrink-0 sm:pl-20
         h-screen flex items-end sm:items-center justify-end sm:justify-start relative"
     >
       <div class="text-right sm:text-left text-black text-5xl sm:text-6xl flex flex-col pl-24 pb-32">
@@ -17,7 +25,7 @@
         </div>
       </div>
     </div>
-    <page-section title="About" caption="わたしについて">
+    <page-section ref="about" title="About" caption="わたしについて">
       <div class="text-sm">
         <img
           src="https://pbs.twimg.com/profile_images/1244859094336278528/pzeqvDET_400x400.png"
@@ -64,11 +72,15 @@
       </div>
     </page-section>
 
-    <page-section title="SKILLS" caption="できること" class="bg-gray-100">
+    <page-section
+      ref="skills"
+      title="SKILLS"
+      caption="できること"
+    >
       <div class="">
         <div>
           <h4 class="text-2xl">
-            Vue.js / Nuxt.js <span class="inline-block ml-2 text-sm bg-green-600 rounded-lg px-4 py-1 text-gray-100 whitespace-no-wrap">実務2年程度</span>
+            Vue.js / Nuxt.js <span class="inline-block ml-2 text-sm bg-gray-800 rounded-lg px-4 py-1 text-gray-100 whitespace-no-wrap">実務2年程度</span>
           </h4>
           <div class="pt-2 text-sm">
             もともと特に知識がない状態で社のプロジェクトでフロントエンドのヘルプに入ったことがきっかけではじめました。
@@ -78,7 +90,7 @@
         </div>
         <div class="mt-10">
           <h4 class="text-2xl">
-            Django Rest Framework <span class="ml-2 text-sm bg-green-600 rounded-lg px-4 py-1 text-gray-100 whitespace-no-wrap">実務2年程度</span>
+            Django Rest Framework <span class="ml-2 text-sm bg-gray-800 rounded-lg px-4 py-1 text-gray-100 whitespace-no-wrap">実務2年程度</span>
           </h4>
           <div class="pt-2 text-sm">
             基本的に機械学習が絡まないプロジェクトではまず Django Rest Framework を使って作成することが多いです。
@@ -89,7 +101,7 @@
       </div>
     </page-section>
 
-    <page-section title="WORKS" caption="やってきたこと">
+    <page-section ref="works" title="WORKS" caption="やってきたこと">
       <div v-for="item in items" :key="item.title">
         <h4 class="text-2xl">
           {{ item.title }}
@@ -106,7 +118,7 @@
       </div>
     </page-section>
 
-    <div class="py-16 border-t bg-gray-600 text-white">
+    <div class="py-16 bg-gray-800 text-white">
       <div class="ml-64 px-8 flex justify-end text-sm">
         created by @nyk510
       </div>
@@ -122,6 +134,7 @@ export default {
   },
   data () {
     return {
+      currentContext: 'start',
       items: [
         {
           title: 'データコンペサイト ぐるぐる',
@@ -134,6 +147,29 @@ export default {
         { title: 'Github', url: 'https://github.com/nyk510' },
         { title: 'Kaggle', url: 'https://www.kaggle.com/nyk510' }
       ]
+    }
+  },
+  computed: {
+    bgClass () {
+      const mapping = {
+        start: 'bg-green-600',
+        about: 'bg-white',
+        skills: 'bg-blue-400',
+        works: 'bg-red-600'
+      }
+      return mapping[this.currentContext]
+    }
+  },
+  methods: {
+    onScroll (e, dom) {
+      const sections = ['about', 'skills', 'works']
+
+      const arr = sections.filter((s) => {
+        const dom = this.$refs[s]
+        const ratio = dom.scrollRatio
+        return ratio < 0.8
+      })
+      this.currentContext = ['start', ...arr].slice(-1)
     }
   }
 }

@@ -6,7 +6,7 @@
     </div>
 
     <div style="position: fixed; right: 0; top: 0; z-index: 5;" class=" flex items-center justify-center">
-      <div class="bg-gray-800 menu-bg" :class="{ 'menu-bg--open': showMenu }" />
+      <div class="bg-green-600 menu-bg" :class="{ 'menu-bg--open': showMenu }" />
     </div>
     <div
       class="h-screen menu-dialog flex"

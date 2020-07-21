@@ -6,15 +6,16 @@
     <div
       class="flex flex-col justify-center"
     >
-      <div v-scroll="onScroll" class="sm:pl-20 overflow-x-hidden">
+      <div v-scroll="onScroll" class="sm:pl-32 overflow-x-hidden">
         <div :style="titleStyle">
           <div class="pl-4">
-            <h2 class="text-6xl">
+            <h2 class="text-6xl" style="z-index: -1">
               {{ title }}
             </h2>
+            <div class="bg-black w-32" style="height: 4px" />
           </div>
-          <div v-if="caption" class="text-lg pl-20 sm:pl-4">
-            > {{ caption }}
+          <div v-if="caption" class="text-lg pt-6 pl-16 sm:pl-4">
+            {{ caption }}
           </div>
         </div>
       </div>
@@ -70,7 +71,6 @@ export default {
   },
   methods: {
     onScroll (e, dom) {
-      /* eslint-disable-next-line */
       this.scrollPosition = dom.offsetTop - window.scrollY
       if (dom.offsetTop < window.scrollY) {
         this.scrollIn = true
