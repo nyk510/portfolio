@@ -8,14 +8,14 @@
     >
       <div v-scroll="onScroll" class="sm:pl-32 overflow-x-hidden">
         <div :style="titleStyle">
-          <div class="pl-4">
-            <h2 class="text-6xl" style="z-index: -1">
+          <div class="sm:pl-32">
+            <h2 class="text-6xl pl-16" style="z-index: -1">
               {{ title }}
             </h2>
-            <div class="bg-black w-32" style="height: 4px" />
-          </div>
-          <div v-if="caption" class="text-lg pt-6 pl-16 sm:pl-4">
-            {{ caption }}
+            <div class="bg-black w-24 sm:w-64 ml-4 sm:-ml-12" style="height: 4px" />
+            <div v-if="caption" class="text-gray-800 text-lg pt-6 pl-16 sm:pl-16">
+              {{ caption }}
+            </div>
           </div>
         </div>
       </div>
@@ -24,7 +24,7 @@
         data-aos="fade-up"
         data-aos-anchor-placement="top-bottom"
       >
-        <div class="max-w-3xl px-5 sm:px-20 pt-10">
+        <div class="max-w-3xl px-5 sm:px-16 pt-16">
           <slot />
         </div>
       </div>
@@ -64,7 +64,7 @@ export default {
     titleStyle () {
       const rate = Math.max(0, (this.scrollRatio - 0.5) * 2)
       return {
-        transform: 'translateX(' + rate * 20 + '%)',
+        transform: 'translateX(-' + rate * 20 + '%)',
         opacity: 1.2 - rate
       }
     }

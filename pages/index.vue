@@ -13,14 +13,17 @@
       style="position: fixed; height: 100vh; width: 4px; z-index: 2;"
     />
     <div
-      class="w-full flex-shrink-0 sm:pl-20
-        h-screen flex items-end sm:items-center justify-end sm:justify-start relative"
+      class="flex-shrink-0 ml-12 sm:ml-64
+        h-screen flex items-end justify-start relative"
     >
-      <div class="text-right sm:text-left text-black text-5xl sm:text-6xl flex flex-col pl-24 pb-32">
-        <div style="transform: rotate(45deg)">
+      <div
+        class="text-black text-6xl
+      transform -rotate-90 origin-top-left -ml-6"
+      >
+        <div>
           YAMAGUCHI
         </div>
-        <div style="margin-top: 24px; transform: rotate(45deg)">
+        <div class="-mt-10">
           TAKAHIRO
         </div>
       </div>
@@ -82,13 +85,13 @@
           <h4 class="text-2xl">
             Vue.js / Nuxt.js <span class="inline-block ml-2 text-sm bg-gray-800 rounded-lg px-4 py-1 text-gray-100 whitespace-no-wrap">実務2年程度</span>
           </h4>
-          <div class="pt-2 text-sm">
+          <div class="pt-6 text-sm">
             もともと特に知識がない状態で社のプロジェクトでフロントエンドのヘルプに入ったことがきっかけではじめました。
             今では触っていて一番好きなのがフロントエンドです。やはりいちばんユーザーに近いということと、画面上に意味ある情報を適切に配置していくことを考えるのがとても好きなので気に入っています。
             主に Vue.js + Nuxt.js で構築することが多いです。Typescript も歴は長いです(単に経験で言うと5年ぐらい)。
           </div>
         </div>
-        <div class="mt-10">
+        <div class="mt-12">
           <h4 class="text-2xl">
             Django Rest Framework <span class="ml-2 text-sm bg-gray-800 rounded-lg px-4 py-1 text-gray-100 whitespace-no-wrap">実務2年程度</span>
           </h4>
@@ -153,7 +156,7 @@ export default {
     bgClass () {
       const mapping = {
         start: 'bg-green-600',
-        about: 'bg-white',
+        about: 'bg-yellow-400',
         skills: 'bg-blue-400',
         works: 'bg-red-600'
       }
