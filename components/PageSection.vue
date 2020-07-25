@@ -24,7 +24,7 @@
         data-aos="fade-up"
         data-aos-anchor-placement="top-bottom"
       >
-        <div class="max-w-3xl px-5 sm:px-16 pt-16">
+        <div class="max-w-3xl px-5 sm:px-16 pt-16 text-gray-800">
           <slot />
         </div>
       </div>
