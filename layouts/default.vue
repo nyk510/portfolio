@@ -2,30 +2,33 @@
   <div>
     <!-- <lifegame-panel /> -->
     <div style="position: fixed; right: 24px; top: 24px; z-index: 101" @click="onClickMenu">
-      <span class="material-icons text-6xl">{{ showMenu ? 'close' : 'menu' }}</span>
+      <span class="material-icons text-6xl cursor-pointer">{{ showMenu ? 'close' : 'menu' }}</span>
     </div>
 
     <div style="position: fixed; right: 0; top: 0; z-index: 5;" class=" flex items-center justify-center">
-      <div class="bg-green-600 menu-bg" :class="{ 'menu-bg--open': showMenu }" />
+      <div class="bg-gray-100 menu-bg" :class="{ 'menu-bg--open': showMenu }" />
     </div>
     <div
       class="h-screen menu-dialog flex"
       :class="menuDialogClass"
     >
-      <div class="ml-6 sm:ml-64 pl-8 pt-24 sm:pt-64">
-        <div>
+      <div class="ml-12 sm:ml-64 pt-24 sm:pt-64">
+        <h3 class="text-gray-800 text-4xl">
+          Yamaguchi Takahiro Website
+        </h3>
+        <div class="pt-12">
           <nuxt-link
             v-for="(item, i) in items"
             :key="item.text"
             tag="div"
             :to="item.to"
-            class="my-5 text-3xl transition-all duration-500 opacity-0 transform text-white"
+            class="mt-2 text-3xl transition-all duration-500 opacity-0 transform text-gray-800"
             style="cursor: pointer"
             :class="itemClass(i)"
             :style="itemStyle(i)"
             @click.native="showMenu = false"
           >
-            - {{ item.text }}
+            {{ item.text }}
           </nuxt-link>
         </div>
       </div>
