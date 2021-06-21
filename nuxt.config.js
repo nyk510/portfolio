@@ -65,6 +65,10 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/pwa'
   ],
+
+  router: {
+    base: '/portfolio/'
+  },
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
