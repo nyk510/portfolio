@@ -1,20 +1,19 @@
 <template>
   <div>
-    <!-- <lifegame-panel /> -->
     <div style="position: fixed; right: 24px; top: 24px; z-index: 101" @click="onClickMenu">
-      <span class="material-icons text-6xl cursor-pointer">{{ showMenu ? 'close' : 'menu' }}</span>
+      <span class="material-icons text-6xl cursor-pointer transition-all duration-500 delay-300 " :class="iconClass">{{ showMenu ? 'close' : 'menu' }}</span>
     </div>
 
     <div style="position: fixed; right: 0; top: 0; z-index: 5;" class=" flex items-center justify-center">
-      <div class="bg-gray-100 menu-bg" :class="{ 'menu-bg--open': showMenu }" />
+      <div class="bg-black menu-bg" :class="{ 'menu-bg--open': showMenu }" />
     </div>
     <div
       class="h-screen menu-dialog flex"
       :class="menuDialogClass"
     >
       <div class="ml-12 sm:ml-64 pt-24 sm:pt-64">
-        <h3 class="text-gray-800 text-4xl">
-          Yamaguchi Takahiro Website
+        <h3 class="text-white text-6xl font-light">
+          Yamaguchi<br>Takahiro
         </h3>
         <div class="pt-12">
           <nuxt-link
@@ -22,7 +21,7 @@
             :key="item.text"
             tag="div"
             :to="item.to"
-            class="mt-2 text-3xl transition-all duration-500 opacity-0 transform text-gray-800"
+            class="mt-2 text-4xl font-light transition-all duration-500 opacity-0 transform text-white"
             style="cursor: pointer"
             :class="itemClass(i)"
             :style="itemStyle(i)"
@@ -38,11 +37,7 @@
 </template>
 
 <script>
-// import LifegamePanel from '@/components/LifegamePanel'
 export default {
-  components: {
-    // LifegamePanel
-  },
   data () {
     return {
       showMenu: false,
@@ -54,6 +49,10 @@ export default {
     }
   },
   computed: {
+    iconClass () {
+      if (this.showMenu) { return 'text-white' }
+      return 'text-black'
+    },
     menuDialogClass () {
       if (this.showMenu) { return 'menu-dialog--open' }
       return ''

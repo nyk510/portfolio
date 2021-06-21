@@ -18,7 +18,7 @@
     >
       <div
         style="z-index: -2"
-        class="text-black text-6xl
+        class="text-black text-6xl font-light
       transform -rotate-90 origin-top-left -ml-6"
       >
         <div>
@@ -113,7 +113,7 @@
       </div>
     </page-section>
 
-    <div class="py-16 bg-white border-t-4 border-gray-800 z-10">
+    <div class="py-16 bg-gray-800 border-t-4 border-black z-10">
       <div class="ml-12 sm:ml-64">
         <div class="flex items-center">
           <a
@@ -121,12 +121,12 @@
             :key="item.title"
             tag="span"
             :class="item.icon"
-            class="text-xl text-gray-800 mr-4 transition duration-500"
+            class="text-xl text-gray-400 mr-4 transition duration-500"
             :href="item.url"
             target="_blank"
           />
         </div>
-        <div class="pt-4 text-sm text-gray-800">
+        <div class="pt-4 text-sm text-gray-400">
           created by @nyk510 ;)
         </div>
       </div>

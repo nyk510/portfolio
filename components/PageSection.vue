@@ -9,7 +9,7 @@
       <div v-scroll="onScroll" class="sm:pl-32 overflow-x-hidden">
         <div :style="titleStyle">
           <div class="sm:pl-32">
-            <h2 class="text-6xl pl-16" style="z-index: -1">
+            <h2 class="text-6xl pl-16 font-light" style="z-index: -1">
               {{ title }}
             </h2>
             <div class="bg-black w-24 sm:w-64 ml-4 sm:-ml-12" style="height: 4px" />
