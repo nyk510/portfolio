@@ -56,6 +56,11 @@ export default {
         property: 'twitter:description',
         content:
           'nyk510 のポートフォリオ'
+      },
+      {
+        hid: 'twitter:image',
+        property: 'twitter:image',
+        content: './icon_400x400.png'
       }
 
     ],
