@@ -39,7 +39,7 @@ export default {
       {
         hid: 'og:image',
         property: 'og:image',
-        content: './icon_400x400.png'
+        content: 'https://nyk510.github.io/portfolio/icon_400x400.png'
       },
       {
         hid: 'twitter:card',
@@ -60,7 +60,7 @@ export default {
       {
         hid: 'twitter:image',
         property: 'twitter:image',
-        content: './icon_400x400.png'
+        content: 'https://nyk510.github.io/portfolio/icon_400x400.png'
       }
 
     ],
