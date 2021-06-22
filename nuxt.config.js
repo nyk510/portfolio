@@ -39,7 +39,7 @@ export default {
       {
         hid: 'og:image',
         property: 'og:image',
-        content: '/icon_400x400.png'
+        content: './icon_400x400.png'
       },
       {
         hid: 'twitter:card',
@@ -60,7 +60,7 @@ export default {
 
     ],
     link: [
-      { rel: 'icon', type: 'image/png', href: '/icon_400x400.png' },
+      { rel: 'icon', type: 'image/png', href: './icon_400x400.png' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/icon?family=Material+Icons' },
       {
         rel: 'stylesheet',
