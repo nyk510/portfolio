@@ -8,26 +8,31 @@
       <div class="bg-black menu-bg" :class="{ 'menu-bg--open': showMenu }" />
     </div>
     <div
-      class="h-screen menu-dialog flex"
+      class="h-screen menu-dialog flex flex-row-reverse"
       :class="menuDialogClass"
     >
-      <div class="ml-12 sm:ml-64 pt-24 sm:pt-64">
-        <h3 class="text-white text-6xl font-light">
+      <div style="position: fixed; width: 4px" class="bg-white inset-y-0 left-20" />
+      <div class="mr-12 sm:mr-64 pt-32 sm:pt-64 flex-grow">
+        <h3 class="text-white text-4xl font-light text-right">
           Yamaguchi<br>Takahiro
         </h3>
-        <div class="pt-12">
+        <div class="pt-12 text-right">
           <nuxt-link
             v-for="(item, i) in items"
             :key="item.text"
             tag="div"
             :to="item.to"
-            class="mt-2 text-4xl font-light transition-all duration-500 opacity-0 transform text-white"
+            class="mt-2 text-4xl font-light transition-all duration-500 opacity-0 transform text-white group overflow-hidden"
             style="cursor: pointer"
             :class="itemClass(i)"
             :style="itemStyle(i)"
             @click.native="showMenu = false"
           >
             {{ item.text }}
+            <div
+              class="w-full h-px bg-white transform translate-x-full duration-200
+            group-hover:translate-x-0 group-hover:opacity-0 transition"
+            />
           </nuxt-link>
         </div>
       </div>
