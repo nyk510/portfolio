@@ -2,12 +2,16 @@
   <div>
     <h4 class="text-2xl">
       {{ value.title }}
-      <span
-        class="inline-block ml-2 text-sm bg-gray-800 rounded-lg px-4 py-1 text-gray-100 whitespace-no-wrap"
-      >{{ value.exp }}</span>
     </h4>
+    <div class="pt-2">
+      <span
+        class="inline-block text-sm bg-white border-2 border-black rounded-lg px-4 py-1 text-black whitespace-no-wrap
+        transition duration-300
+        hover:bg-black hover:text-white"
+      >{{ value.exp }}</span>
+    </div>
     <div
-      class="pt-4 text-sm text-gray-800 leading-relaxed"
+      class="pt-4 text-sm text-black leading-relaxed"
     >
       {{ value.body }}
     </div>

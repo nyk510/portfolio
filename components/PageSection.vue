@@ -9,11 +9,11 @@
       <div v-scroll="onScroll" class="sm:pl-32 overflow-x-hidden">
         <div :style="titleStyle">
           <div class="sm:pl-32">
-            <h2 class="text-6xl pl-16 font-light" style="z-index: -1">
+            <h2 class="text-6xl pl-16 font-light" style="z-index: -1; text-transform: uppercase">
               {{ title }}
             </h2>
             <div class="bg-black w-24 sm:w-64 ml-4 sm:-ml-12" style="height: 4px" />
-            <div v-if="caption" class="text-gray-800 text-lg pt-6 pl-16 sm:pl-16">
+            <div v-if="caption" class="text-black text-lg pt-6 pl-16 sm:pl-16">
               {{ caption }}
             </div>
           </div>
@@ -24,7 +24,7 @@
         data-aos="fade-up"
         data-aos-anchor-placement="top-bottom"
       >
-        <div class="max-w-3xl px-5 sm:px-16 pt-16 text-gray-800">
+        <div class="max-w-3xl px-5 sm:px-16 pt-16 text-black">
           <slot />
         </div>
       </div>
