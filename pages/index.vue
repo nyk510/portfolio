@@ -47,7 +47,7 @@
           />
         </div>
         <h4 class="text-2xl pt-10 pb-5 flex items-center">
-          <span class="material-icons mr-3">work</span>略歴
+          <span class="material-icons-outlined mr-3">work_outline</span>略歴
         </h4>
         <div class="leading-relaxed">
           <p class="pb-5">
@@ -59,7 +59,7 @@
           </p>
         </div>
         <h4 class="text-2xl pt-10 pb-5 flex items-center">
-          <span class="material-icons mr-3">favorite</span>
+          <span class="material-icons-outlined mr-3">favorite_border</span>
           好きなこと
         </h4>
         <div class="leading-relaxed">
